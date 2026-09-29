@@ -1,0 +1,18 @@
+{
+  "QR": {
+    "TITLE": "Генератор QR-кодов",
+    "SUBTITLE": "Создайте QR-код из текста или URL",
+    "INPUT_LABEL": "Введите текст или URL",
+    "INPUT_PLACEHOLDER": "Введите текст или URL",
+    "GENERATE": "Создать QR-код",
+    "DOWNLOAD": "Скачать PNG"
+  },
+  "LANGUAGE": {
+    "SELECT": "Язык",
+    "ENGLISH": "Английский",
+    "SPANISH": "Испанский",
+    "HINDI": "Хинди",
+    "MARATHI": "Маратхи",
+    "RUSSIAN": "Русский"
+  }
+}

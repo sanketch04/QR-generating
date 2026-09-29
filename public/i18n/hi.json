@@ -1,0 +1,17 @@
+{
+  "QR": {
+    "TITLE": "क्यूआर कोड जनरेटर",
+    "SUBTITLE": "टेक्स्ट या URL से क्यूआर कोड बनाएं",
+    "INPUT_LABEL": "टेक्स्ट या URL दर्ज करें",
+    "INPUT_PLACEHOLDER": "टेक्स्ट या URL दर्ज करें",
+    "GENERATE": "क्यूआर कोड बनाएं",
+    "DOWNLOAD": "PNG डाउनलोड करें"
+  },
+  "LANGUAGE": {
+    "SELECT": "भाषा",
+    "ENGLISH": "अंग्रेज़ी",
+    "SPANISH": "स्पेनिश",
+    "HINDI": "हिंदी",
+    "MARATHI": "मराठी"
+  }
+}

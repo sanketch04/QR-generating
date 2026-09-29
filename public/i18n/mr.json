@@ -1,0 +1,17 @@
+{
+  "QR": {
+    "TITLE": "QR कोड जनरेटर",
+    "SUBTITLE": "मजकूर किंवा URL मधून QR कोड तयार करा",
+    "INPUT_LABEL": "मजकूर किंवा URL प्रविष्ट करा",
+    "INPUT_PLACEHOLDER": "मजकूर किंवा URL प्रविष्ट करा",
+    "GENERATE": "QR कोड तयार करा",
+    "DOWNLOAD": "PNG डाउनलोड करा"
+  },
+  "LANGUAGE": {
+    "SELECT": "भाषा",
+    "ENGLISH": "इंग्रजी",
+    "SPANISH": "स्पॅनिश",
+    "HINDI": "हिंदी",
+    "MARATHI": "मराठी"
+  }
+}

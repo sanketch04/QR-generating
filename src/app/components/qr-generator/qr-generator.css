@@ -1,0 +1,264 @@
+/* ==============================
+   MAIN CONTAINER
+================================= */
+
+.qr-container {
+  width: 90%;
+  max-width: 650px;
+
+  margin: 50px auto;
+  padding: 35px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.12);
+
+  text-align: center;
+}
+
+
+/* ==============================
+   LANGUAGE
+================================= */
+
+.language-section {
+  display: flex;
+
+  justify-content: flex-end;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 30px;
+}
+
+.language-section label {
+  margin: 0;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  color: #222;
+}
+
+.language-section select {
+  padding: 9px 14px;
+
+  border: 1px solid #ccc;
+
+  border-radius: 8px;
+
+  background: #fff;
+
+  font-size: 14px;
+
+  cursor: pointer;
+}
+
+.language-section select:focus {
+  outline: none;
+
+  border-color: #2563eb;
+}
+
+
+/* ==============================
+   HEADING
+================================= */
+
+.qr-container h1 {
+  margin: 0 0 10px;
+
+  font-size: 32px;
+  font-weight: 700;
+
+  color: #111;
+}
+
+.subtitle {
+  margin: 0 0 30px;
+
+  color: #666;
+
+  font-size: 16px;
+}
+
+
+/* ==============================
+   FORM
+================================= */
+
+.form-group {
+  text-align: left;
+
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  color: #111;
+}
+
+.form-group input {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 14px 16px;
+
+  border: 1px solid #ccc;
+
+  border-radius: 10px;
+
+  font-size: 16px;
+
+  transition: 0.2s;
+}
+
+.form-group input:focus {
+  outline: none;
+
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+
+/* ==============================
+   GENERATE BUTTON
+================================= */
+
+.generate-btn {
+  padding: 13px 28px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #111;
+
+  color: white;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.generate-btn:hover {
+  background: #2563eb;
+
+  transform: translateY(-2px);
+}
+
+
+/* ==============================
+   QR CODE
+================================= */
+
+.qr-preview {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 35px;
+  margin-bottom: 25px;
+}
+
+
+/* ==============================
+   DOWNLOAD BUTTON
+================================= */
+
+.download-buttons {
+  display: flex;
+
+  justify-content: center;
+
+  margin-top: 20px;
+}
+
+.download-btn {
+  display: inline-block;
+
+  padding: 13px 28px;
+
+  border-radius: 10px;
+
+  background: #2563eb;
+
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.download-btn:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-2px);
+}
+
+
+/* ==============================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+  .qr-container {
+    width: 92%;
+
+    margin: 25px auto;
+
+    padding: 25px 20px;
+  }
+
+  .qr-container h1 {
+    font-size: 26px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .language-section {
+    justify-content: center;
+  }
+
+  .form-group input {
+    font-size: 15px;
+  }
+
+  .generate-btn {
+    width: 100%;
+  }
+
+  .download-btn {
+    width: 100%;
+
+    box-sizing: border-box;
+  }
+
+}

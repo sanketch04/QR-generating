@@ -1,0 +1,15 @@
+{
+  "QR": {
+    "TITLE": "Generador de códigos QR",
+    "SUBTITLE": "Genera un código QR a partir de texto o una URL",
+    "INPUT_LABEL": "Introduce texto o URL",
+    "INPUT_PLACEHOLDER": "Introduce texto o URL",
+    "GENERATE": "Generar código QR",
+    "DOWNLOAD": "Descargar PNG"
+  },
+  "LANGUAGE": {
+    "SELECT": "Idioma",
+    "ENGLISH": "Inglés",
+    "SPANISH": "Español"
+  }
+}

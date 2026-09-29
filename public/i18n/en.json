@@ -1,0 +1,18 @@
+{
+  "QR": {
+    "TITLE": "QR Code Generator",
+    "SUBTITLE": "Generate a QR code from text or a URL",
+    "INPUT_LABEL": "Enter Text or URL",
+    "INPUT_PLACEHOLDER": "Enter text or URL",
+    "GENERATE": "Generate QR Code",
+    "DOWNLOAD": "Download PNG"
+  },
+  "LANGUAGE": {
+    "SELECT": "Language",
+    "ENGLISH": "English",
+    "SPANISH": "Spanish",
+    "HINDI": "Hindi",
+    "MARATHI": "Marathi",
+    "RUSSIAN": "Russian"
+  }
+}
