@@ -1,0 +1,177 @@
+<div class="add-employee-page">
+  <mat-card class="form-card">
+    <!-- Header -->
+    <div class="form-header">
+      <div>
+        <h1>Add Employee</h1>
+
+        <p>Enter the employee information below.</p>
+      </div>
+
+      <button mat-icon-button type="button" (click)="cancel()" matTooltip="Close">
+        <mat-icon> close </mat-icon>
+      </button>
+    </div>
+
+    <!-- Employee Form -->
+    <form [formGroup]="employeeForm" (ngSubmit)="saveEmployee()">
+      <!-- First Name -->
+      <mat-form-field appearance="outline">
+        <mat-label> First Name </mat-label>
+
+        <input
+          matInput
+          type="text"
+          formControlName="firstName"
+          placeholder="Enter first name"
+          autocomplete="given-name"
+        />
+
+        @if (
+          employeeForm.controls.firstName.hasError('required') &&
+          employeeForm.controls.firstName.touched
+        ) {
+          <mat-error> First name is required. </mat-error>
+        }
+
+        @if (
+          employeeForm.controls.firstName.hasError('minlength') &&
+          employeeForm.controls.firstName.touched
+        ) {
+          <mat-error> First name must contain at least 2 characters. </mat-error>
+        }
+      </mat-form-field>
+
+      <!-- Last Name -->
+      <mat-form-field appearance="outline">
+        <mat-label> Last Name </mat-label>
+
+        <input
+          matInput
+          type="text"
+          formControlName="lastName"
+          placeholder="Enter last name"
+          autocomplete="family-name"
+        />
+
+        @if (
+          employeeForm.controls.lastName.hasError('required') &&
+          employeeForm.controls.lastName.touched
+        ) {
+          <mat-error> Last name is required. </mat-error>
+        }
+
+        @if (
+          employeeForm.controls.lastName.hasError('minlength') &&
+          employeeForm.controls.lastName.touched
+        ) {
+          <mat-error> Last name must contain at least 2 characters. </mat-error>
+        }
+      </mat-form-field>
+
+      <!-- Email -->
+      <mat-form-field appearance="outline">
+        <mat-label> Email </mat-label>
+
+        <input
+          matInput
+          type="email"
+          formControlName="email"
+          placeholder="employee@example.com"
+          autocomplete="email"
+        />
+
+        @if (
+          employeeForm.controls.email.hasError('required') && employeeForm.controls.email.touched
+        ) {
+          <mat-error> Email is required. </mat-error>
+        }
+
+        @if (employeeForm.controls.email.hasError('email') && employeeForm.controls.email.touched) {
+          <mat-error> Enter a valid email address. </mat-error>
+        }
+      </mat-form-field>
+
+      <!-- Department -->
+      <mat-form-field appearance="outline">
+        <mat-label> Department </mat-label>
+
+        <mat-select formControlName="department">
+          <mat-option value="IT"> IT </mat-option>
+
+          <mat-option value="HR"> HR </mat-option>
+
+          <mat-option value="Finance"> Finance </mat-option>
+
+          <mat-option value="Marketing"> Marketing </mat-option>
+
+          <mat-option value="Sales"> Sales </mat-option>
+        </mat-select>
+
+        @if (
+          employeeForm.controls.department.hasError('required') &&
+          employeeForm.controls.department.touched
+        ) {
+          <mat-error> Department is required. </mat-error>
+        }
+      </mat-form-field>
+
+      <!-- Salary -->
+      <mat-form-field appearance="outline">
+        <mat-label> Salary </mat-label>
+
+        <input matInput type="number" formControlName="salary" placeholder="Enter salary" min="1" />
+
+        <span matTextPrefix>₹&nbsp;</span>
+
+        @if (
+          employeeForm.controls.salary.hasError('required') && employeeForm.controls.salary.touched
+        ) {
+          <mat-error> Salary is required. </mat-error>
+        }
+
+        @if (employeeForm.controls.salary.hasError('min') && employeeForm.controls.salary.touched) {
+          <mat-error> Salary must be greater than 0. </mat-error>
+        }
+      </mat-form-field>
+
+      <!-- Joining Date -->
+      <mat-form-field appearance="outline">
+        <mat-label> Joining Date </mat-label>
+
+        <input
+          matInput
+          [matDatepicker]="picker"
+          formControlName="joiningDate"
+          placeholder="Select joining date"
+        />
+
+        <mat-datepicker-toggle matIconSuffix [for]="picker"> </mat-datepicker-toggle>
+
+        <mat-datepicker #picker> </mat-datepicker>
+
+        @if (
+          employeeForm.controls.joiningDate.hasError('required') &&
+          employeeForm.controls.joiningDate.touched
+        ) {
+          <mat-error> Joining date is required. </mat-error>
+        }
+      </mat-form-field>
+
+      <!-- Form Buttons -->
+      <div class="form-actions">
+        <button type="button" mat-stroked-button (click)="cancel()">
+          <mat-icon> close </mat-icon>
+
+          Cancel
+        </button>
+
+        <button type="submit" mat-raised-button color="primary">
+          <mat-icon> save </mat-icon>
+
+          Save Employee
+        </button>
+      </div>
+    </form>
+  </mat-card>
+</div>

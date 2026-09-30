@@ -1,0 +1,206 @@
+<mat-sidenav-container class="dashboard-container">
+  <!-- Sidebar -->
+  <mat-sidenav #sidenav mode="side" opened class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">EM</div>
+
+      <div class="brand">
+        <strong>Employee</strong>
+        <span>Management</span>
+      </div>
+    </div>
+
+    <mat-nav-list>
+      <a mat-list-item routerLink="/dashboard">
+        <mat-icon matListItemIcon> dashboard </mat-icon>
+
+        <span matListItemTitle> Dashboard </span>
+      </a>
+
+      <a mat-list-item routerLink="/employees">
+        <mat-icon matListItemIcon> people </mat-icon>
+
+        <span matListItemTitle> Employees </span>
+      </a>
+
+      @if (userRole === 'Admin') {
+        <a mat-list-item routerLink="/employees/add">
+          <mat-icon matListItemIcon> person_add </mat-icon>
+
+          <span matListItemTitle> Add Employee </span>
+        </a>
+      }
+
+      <a mat-list-item routerLink="/qr">
+        <mat-icon matListItemIcon> qr_code_2 </mat-icon>
+
+        <span matListItemTitle> QR Generator </span>
+      </a>
+    </mat-nav-list>
+
+    <!-- Sidebar Bottom -->
+    <div class="sidebar-bottom">
+      <button mat-list-item class="logout-button" (click)="logout()">
+        <mat-icon> logout </mat-icon>
+
+        <span> Logout </span>
+      </button>
+    </div>
+  </mat-sidenav>
+
+  <!-- Main Content -->
+  <mat-sidenav-content>
+    <!-- Toolbar -->
+    <mat-toolbar class="top-toolbar">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon> menu </mat-icon>
+      </button>
+
+      <span class="toolbar-title"> Employee Management </span>
+
+      <span class="toolbar-spacer"></span>
+
+      <!-- User Information -->
+      <div class="user-info">
+        <div class="user-avatar">
+          {{ userName.charAt(0).toUpperCase() }}
+        </div>
+
+        <div class="user-details">
+          <strong>
+            {{ userName }}
+          </strong>
+
+          <span>
+            {{ userRole }}
+          </span>
+        </div>
+      </div>
+
+      <!-- Logout -->
+      <button mat-icon-button (click)="logout()" matTooltip="Logout">
+        <mat-icon> logout </mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <!-- Dashboard Content -->
+    <main class="dashboard-content">
+      <!-- Page Heading -->
+      <div class="page-heading">
+        <div>
+          <h1>Dashboard</h1>
+
+          <p>Welcome back, {{ userName }}.</p>
+        </div>
+      </div>
+
+      <!-- Error Message -->
+      @if (error$ | async; as error) {
+        <div class="error-message">
+          {{ error }}
+        </div>
+      }
+
+      <!-- Statistics -->
+      <div class="stats-grid">
+        <!-- Total Employees -->
+        <mat-card class="stat-card">
+          <mat-icon> people </mat-icon>
+
+          <div>
+            <span> Total Employees </span>
+
+            <strong>
+              @if (loading$ | async) {
+                ...
+              } @else {
+                {{ totalEmployees$ | async }}
+              }
+            </strong>
+          </div>
+        </mat-card>
+
+        <!-- Active Employees -->
+        <mat-card class="stat-card">
+          <mat-icon> person </mat-icon>
+
+          <div>
+            <span> Active Employees </span>
+
+            <strong> -- </strong>
+          </div>
+        </mat-card>
+
+        <!-- Inactive Employees -->
+        <mat-card class="stat-card">
+          <mat-icon> person_off </mat-icon>
+
+          <div>
+            <span> Inactive Employees </span>
+
+            <strong> -- </strong>
+          </div>
+        </mat-card>
+
+        <!-- User Role -->
+        <mat-card class="stat-card">
+          <mat-icon> admin_panel_settings </mat-icon>
+
+          <div>
+            <span> Your Role </span>
+
+            <strong>
+              {{ userRole }}
+            </strong>
+          </div>
+        </mat-card>
+      </div>
+
+      <!-- Welcome Card -->
+      <mat-card class="welcome-card">
+        <div class="welcome-content">
+          <div>
+            <h2>Employee Management System</h2>
+
+            <p>
+              Manage employees, view information, generate QR codes and access your management tools
+              from one place.
+            </p>
+          </div>
+
+          <mat-icon> business </mat-icon>
+        </div>
+      </mat-card>
+
+      <!-- Quick Actions -->
+      <section class="quick-section">
+        <h2>Quick Actions</h2>
+
+        <div class="action-grid">
+          <!-- View Employees -->
+          <button mat-stroked-button (click)="navigateToEmployees()">
+            <mat-icon> people </mat-icon>
+
+            View Employees
+          </button>
+
+          <!-- Add Employee -->
+          @if (userRole === 'Admin') {
+            <button mat-stroked-button routerLink="/employees/add">
+              <mat-icon> person_add </mat-icon>
+
+              Add Employee
+            </button>
+          }
+
+          <!-- Generate QR -->
+          <button mat-stroked-button (click)="navigateToQr()">
+            <mat-icon> qr_code_2 </mat-icon>
+
+            Generate QR
+          </button>
+        </div>
+      </section>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

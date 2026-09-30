@@ -1,0 +1,103 @@
+.add-employee-page {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+
+  padding: 40px 20px;
+
+  background: #f5f7fb;
+}
+
+
+.form-card {
+  width: 100%;
+  max-width: 850px;
+
+  padding: 30px;
+
+  border-radius: 18px;
+}
+
+
+.form-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  margin-bottom: 30px;
+}
+
+
+.form-header h1 {
+  margin: 0;
+
+  font-size: 30px;
+  font-weight: 700;
+}
+
+
+.form-header p {
+  margin: 8px 0 0;
+
+  color: #6b7280;
+}
+
+
+form {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 20px;
+}
+
+
+mat-form-field {
+  width: 100%;
+}
+
+
+.form-actions {
+  grid-column: 1 / -1;
+
+  display: flex;
+  justify-content: flex-end;
+
+  gap: 12px;
+
+  margin-top: 10px;
+
+  padding-top: 10px;
+}
+
+
+@media (max-width: 700px) {
+
+  .add-employee-page {
+    padding: 20px 12px;
+  }
+
+
+  .form-card {
+    padding: 20px;
+  }
+
+
+  form {
+    grid-template-columns: 1fr;
+  }
+
+
+  .form-actions {
+    grid-column: auto;
+
+    flex-direction: column-reverse;
+  }
+
+
+  .form-actions button {
+    width: 100%;
+  }
+
+}

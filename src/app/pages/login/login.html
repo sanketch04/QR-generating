@@ -1,0 +1,63 @@
+<div class="login-page">
+  <mat-card class="login-card">
+    <div class="login-header">
+      <div class="logo">EM</div>
+
+      <h1>Employee Management</h1>
+
+      <p>Sign in to continue to your dashboard</p>
+    </div>
+
+    <form (ngSubmit)="onLogin()">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Username</mat-label>
+
+        <input
+          matInput
+          type="text"
+          name="username"
+          [(ngModel)]="username"
+          placeholder="Enter username"
+          autocomplete="username"
+        />
+
+        <mat-icon matPrefix> person </mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Password</mat-label>
+
+        <input
+          matInput
+          type="password"
+          name="password"
+          [(ngModel)]="password"
+          placeholder="Enter password"
+          autocomplete="current-password"
+        />
+
+        <mat-icon matPrefix> lock </mat-icon>
+      </mat-form-field>
+
+      @if (errorMessage) {
+        <div class="error-message">
+          {{ errorMessage }}
+        </div>
+      }
+
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        class="login-button"
+        [disabled]="isLoading"
+      >
+        @if (isLoading) {
+          Logging in...
+        } @else {
+          Login
+        }
+      </button>
+    </form>
+  </mat-card>
+</div>
