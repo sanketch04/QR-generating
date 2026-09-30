@@ -37,7 +37,7 @@ export class Login {
     this.errorMessage = '';
 
     if (!this.username || !this.password) {
-      this.errorMessage = 'Username & password are required.';
+      this.errorMessage = 'Username && password are required.';
 
       return;
     }
